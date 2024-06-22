@@ -1,6 +1,7 @@
 import { ProductsModel } from "../models/productsModel.js";
 import { productEschema, validateProduct, validatePartialProduct } from '../scheemes/productScheme.js';
 
+
 export class ProductsController{
 
     static async getAll(req, res){
