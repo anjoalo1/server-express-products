@@ -7,6 +7,8 @@ const dbName = 'productsdb';
 //nombre de la coleccion
 const collectionName = 'products';
 
+import { ObjectId } from 'mongodb';
+
 // Crear un cliente de MongoDB
 //const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -22,9 +24,12 @@ export async function consultarDocumentos() {
 
         console.log('Conexión exitosa a MongoDB');
 
+        const id = "667727f583c2e127893bab3b";
+        const objectId = new ObjectId(id);
         const db = client.db(dbName);
         const collection = db.collection(collectionName);
-        const documents = await collection.find({}).toArray();
+        const documents = await collection.findOne({_id:objectId});
+        //const documents = await collection.find({year:2055}).toArray();
 
         //console.log('Documentos encontrados:', documents);
         return documents;
