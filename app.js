@@ -2,6 +2,7 @@ import express from 'express'
 import { consultarDocumentos } from './coenections/mongoConection.js';
 import { moviesRouter } from './routes/productsRoutes.js'
 import { productsRouter } from './routes/productsRouterMongo.js';
+import { productsRouterMysql } from './routes/productsRouterMysql.js';
 
 import { consultarProductos } from './conectionDb/productsModelMongo.js';
 const app = express()
@@ -15,6 +16,8 @@ app.use('/products', moviesRouter)
 
 //router de productos en base de datos mongo
 app.use('/productsmongo', productsRouter)
+
+app.use('/productsmysql', productsRouterMysql)
 
 app.get('/',(req, res)=>{
     res.status(400).json({message:"Conection ok"})
