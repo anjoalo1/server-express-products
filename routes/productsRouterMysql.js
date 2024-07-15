@@ -5,12 +5,12 @@ import { ControllerMysql } from '../controller/productsControllerMysql.js';
 export const productsRouterMysql = Router()
 
 productsRouterMysql.get('/', ControllerMysql.getAll);
+
+productsRouterMysql.get('/:id', ControllerMysql.getProductById)
+
+productsRouterMysql.patch('/:id', ControllerMysql.updateProduct)
 /* 
-
-productsRouterMysql.get('/:id', ProductsController.getProductById)
-
 productsRouterMysql.post('/', ProductsController.createProduct)
 
-productsRouterMysql.patch('/:id', ProductsController.updateProduct)
 
 productsRouterMysql.delete('/:id', ProductsController.deleteProduct) */

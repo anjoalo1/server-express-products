@@ -8,6 +8,10 @@ import { consultarProductos } from './conectionDb/productsModelMongo.js';
 const app = express()
 const port = process.env.PORT ?? 3000;
 
+import cors from 'cors';
+// Configurar CORS con opciones específicas
+app.use(cors());
+
 app.use(express.json())
 
 //router de productos en un array local
